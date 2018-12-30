@@ -26,8 +26,8 @@ namespace Entity_Framework_Core_String_Filter_Tips.Pages
             var contactsLike = await _context.Contacts.Where(c => EF.Functions.Like(c.LastName, "Sw%")).ToListAsync();
             ViewData.Add("ContactsLike", contactsLike);
 
-            var contactsCompare = await _context.Contacts.Where(c => String.Compare(c.FirstName, "D", StringComparison.Ordinal) > 0).ToListAsync();
-            ViewData.Add("contactsCompare", contactsLike);
+            var contactsCompare = await _context.Contacts.Where(c => String.Compare(c.FirstName, "D", StringComparison.Ordinal) < 0).ToListAsync();
+            ViewData.Add("contactsCompare", contactsCompare);
 
             return Page(); 
         }
