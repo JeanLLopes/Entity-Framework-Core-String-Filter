@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<br>
+<br>
+<br>
+<ul>
+    @foreach (var item in ViewData["Contacts"] as IEnumerable<Contact>)
+    {
+        <li>@item.ToString()</li>
+    }
+</ul>
+
+
+<br>
+<br>
+<br>
+<ul>
+    @foreach (var item in ViewData["ContactsLike"] as IEnumerable<Contact>)
+    {
+        <li>@item.ToString()</li>
+    }
+</ul>
+
+<br>
+<br>
+<br>
+<ul>
+    @foreach (var item in ViewData["contactsCompare"] as IEnumerable<Contact>)
+    {
+        <li>@item.ToString()</li>
+    }
+</ul>
